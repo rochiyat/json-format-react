@@ -50,4 +50,6 @@
   padding: 5px;            /* Opsional: ruang di sekitar teks */
   border-radius: 5px;       /* Opsional: sudut melengkung */
   font-size: 12px;
+  height: 600px;
+  width: 500px;
 }

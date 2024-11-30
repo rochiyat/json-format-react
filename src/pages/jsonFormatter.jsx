@@ -7,7 +7,6 @@ import '../css/pretty-bg-white.css';
 export default function JsonFormatter() {
   const [input, setInput] = useState('')
   const [output, setOutput] = useState('')
-  const [error, setError] = useState('')
 
   const formatJson = (jsonString) => {
     try {
@@ -25,12 +24,11 @@ export default function JsonFormatter() {
     try {
       const formatted = formatJson(input)
       setOutput(formatted)
-      setError('')
     } catch (e) {
       if (e instanceof Error) {
-        setError(e.message)
+        window.alert(e.message)
       } else {
-        setError('An unknown error occurred')
+        window.alert('An unknown error occurred')
       }
       setOutput('')
     }
@@ -45,19 +43,18 @@ export default function JsonFormatter() {
             placeholder="Enter your JSON here..."
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            rows={50}
-            cols={50}
-            className="w-full p-2 border rounded"
+            style={{height: "600px", width: "500px", borderRadius: 5, padding: 5}}
+            className="p-2 border rounded"
           />
         </div>
-        <div className='column'>
-          <button onClick={handleFormat} className="w-full p-2 border rounded">
+        <div className='column 2xl'>
+          <button onClick={handleFormat} className="w-full p-2 border rounded border-radius-5">
             Format JSON
           </button>
         </div>
         <div className='column'>
           {
-            <div style={{textAlign: "left", overflowX: "auto"}}>
+            <div>
               <JSONPretty className="json-pretty-custom" data={output}/>
             </div>
           }
