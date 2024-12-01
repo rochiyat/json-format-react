@@ -2,6 +2,8 @@
 
 A simple and elegant React component to format and display JSON data in your applications. This library is designed to streamline the process of rendering raw JSON into a human-readable format, making it easier to debug or present structured data.
 
+[Demo](https://json-format-react.vercel.app/)
+
 ---
 
 ## Features
